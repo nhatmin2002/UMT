@@ -228,7 +228,7 @@ class MNERProcessor(DataProcessor):
 
     def get_dev_examples(self, data_dir):
         """See base class."""
-        data, imgs, auxlabels = self._read_mmtsv(os.path.join(data_dir, "valid.txt"))
+        data, imgs, auxlabels = self._read_mmtsv(os.path.join(data_dir, "dev.txt"))
         return self._create_examples(data, imgs, auxlabels, "dev")
 
     def get_test_examples(self, data_dir):
@@ -547,7 +547,7 @@ def main():
     parser.add_argument('--layer_num2', type=int, default=1, help='number of img2txt layer')
     parser.add_argument('--layer_num3', type=int, default=1, help='number of txt2txt layer')
     parser.add_argument('--fine_tune_cnn', action='store_true', help='fine tune pre-trained CNN if True')
-    parser.add_argument('--resnet_root', default='./resnet', help='path the pre-trained cnn models')
+    parser.add_argument('--resnet_root', default='/kaggle/input/resnet-umt/', help='path the pre-trained cnn models')
     parser.add_argument('--crop_size', type=int, default=224, help='crop size of image')
     parser.add_argument('--path_image', default='/kaggle/working/data/', help='path to images')
     #parser.add_argument('--mm_model', default='TomBert', help='model name') #
