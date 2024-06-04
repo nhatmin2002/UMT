@@ -237,7 +237,14 @@ class MNERProcessor(DataProcessor):
         return self._create_examples(data, imgs, auxlabels, "test")
 
     def get_labels(self):
-        return ["O", "B-MISC", "I-MISC", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC", "X", "[CLS]", "[SEP]"]
+        return "O","B-ORG",
+        "B-MISC",
+        "I-PER",
+        "I-ORG",
+        "B-LOC",
+        "I-MISC",
+        "I-LOC",
+        "B-PER", "X", "[CLS]", "[SEP]"]
 
     def get_auxlabels(self):
         return ["O", "B", "I", "X", "[CLS]", "[SEP]"]
@@ -542,7 +549,7 @@ def main():
     parser.add_argument('--fine_tune_cnn', action='store_true', help='fine tune pre-trained CNN if True')
     parser.add_argument('--resnet_root', default='./resnet', help='path the pre-trained cnn models')
     parser.add_argument('--crop_size', type=int, default=224, help='crop size of image')
-    parser.add_argument('--path_image', default='../pytorch-pretrained-BERT/twitter_subimages/', help='path to images')
+    parser.add_argument('--path_image', default='/kaggle/working/data/', help='path to images')
     #parser.add_argument('--mm_model', default='TomBert', help='model name') #
     parser.add_argument('--server_ip', type=str, default='', help="Can be used for distant debugging.")
     parser.add_argument('--server_port', type=str, default='', help="Can be used for distant debugging.")
@@ -551,7 +558,7 @@ def main():
     if args.task_name == "twitter2017":
         args.path_image = "../pytorch-pretrained-BERT/twitter_subimages/"
     elif args.task_name == "twitter2015":
-        args.path_image = "../pytorch-pretrained-BERT/twitter15_images/"
+        args.path_image = "/kaggle/working/data/"
 
     if args.server_ip and args.server_port:
         # Distant debugging - see https://code.visualstudio.com/docs/python/debugging#_attach-to-a-local-script
