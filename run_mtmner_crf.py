@@ -592,7 +592,7 @@ def main():
 
     #'''
     if args.task_name == "twitter2015":
-        args.num_train_epochs = 24.0
+        args.num_train_epochs = 10.0
     if args.task_name == "twitter2017":
         args.num_train_epochs = 22.0
     #'''
