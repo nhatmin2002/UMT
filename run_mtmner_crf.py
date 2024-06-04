@@ -237,14 +237,7 @@ class MNERProcessor(DataProcessor):
         return self._create_examples(data, imgs, auxlabels, "test")
 
     def get_labels(self):
-        return "O","B-ORG",
-        "B-MISC",
-        "I-PER",
-        "I-ORG",
-        "B-LOC",
-        "I-MISC",
-        "I-LOC",
-        "B-PER", "X", "[CLS]", "[SEP]"]
+        return "O","B-ORG","B-MISC","I-PER","I-ORG","B-LOC","I-MISC","I-LOC","B-PER", "X", "[CLS]", "[SEP]"
 
     def get_auxlabels(self):
         return ["O", "B", "I", "X", "[CLS]", "[SEP]"]
