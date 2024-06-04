@@ -423,7 +423,7 @@ def convert_mm_examples_to_features(examples, label_list, auxlabel_list, max_seq
         except:
             count += 1
             # print('image has problem!')
-            image_path_fail = os.path.join(path_img, '17_06_4705.jpg')
+            image_path_fail = os.path.join(path_img, 'background.jpg')
             image = image_process(image_path_fail, transform)
 
         if ex_index < 2:
